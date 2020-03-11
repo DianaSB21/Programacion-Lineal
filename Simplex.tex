@@ -1,0 +1,80 @@
+\documentclass{article}
+
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+
+\title{Método Simplex}
+\author{Diana Sebastian Bernal}
+
+\begin{document}
+
+\maketitle
+
+\section{Introducción}
+\label{sec:introduccion}
+
+El método simplex es un algoritmo para resolver problemas de
+programacion lineal. Fue inventado por George Bernard Dantzing en el
+año 1947.
+
+\section{Ejemplo}
+\label{sec:ejemplo}
+
+Ilustraremos la aplicación del método simplex con un ejemplo.
+\begin{equation*}
+ \begin{aligned}
+\text{Maximizar} \quad & 2x_{1}+2x_{2}\\
+\text{sujeto a} \quad &
+  \begin{aligned}
+   2x_1+x_{2} &\leq 4\\
+   x_{1}+2x_{2} &\geq 5\\
+    x_{1},x_{2} &\geq 0
+  \end{aligned}
+\end{aligned}
+
+\end{equation*}
+Como una de las ecuciones tiene el simbolo $\geq$, entonces
+multiplicamos a todos los miebros de la ecuacion por $-1$ para obtener
+el problema en forma estandar.
+\begin{equation*}
+ \begin{aligned}
+\text{Maximizar} \quad & 2x_{1}+2x_{2}\\
+\text{sujeto a} \quad &
+  \begin{aligned}
+   2x_1+x_{2} &\leq 4\\
+ -x_{1}-2x_{2} &\leq -5\\
+    x_{1},x_{2} &\geq 0
+  \end{aligned}
+\end{aligned}
+\end{equation*}
+
+Para obtener la forma simplex, añadimos variables de holgura por cada
+desigualdad.
+
+\begin{equation*}
+ \begin{aligned}
+\text{Maximizar} \quad & 2x_{1}+2x_{2}\\
+\text{sujeto a} \quad &
+  \begin{aligned}
+   2x_1+x_{2}+x_{3} &= 4\\
+   -x_{1}-2x_{2}    +x_{4} &=-5\\
+    x_{1},x_{2},x_{3},x_{4} &\geq 0
+  \end{aligned}
+\end{aligned}
+\end{equation*}
+
+A continuacion obtenemos \emph{tablero simplex} despejando las
+variables de holgura.
+\begin{equation*}
+ \begin{aligned}
+   x_3 &=4-2x_1-x_2\\
+   x_4  &=-5+x_1+2x_1\\
+   \hline
+   z &=\phantom{-5}+2x_{1}+2x_{2}
+  \end{aligned}
+
+\end{equation*}
+
+\end{document}
+
